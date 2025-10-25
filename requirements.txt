@@ -1,0 +1,45 @@
+# Core LangChain  
+langchain>=0.1.0
+langchain-community>=0.0.1
+langchain-core>=0.1.0
+langchain-text-splitters>=0.0.1
+langchain-chroma>=0.0.1
+
+# Document Loaders
+unstructured>=0.10.0
+pypdf>=3.0.0
+docx2txt>=0.8
+markdown>=3.4.0
+
+# Vector Stores
+chromadb>=0.4.0
+faiss-cpu>=1.7.0
+
+# LLM Providers
+openai>=1.0.0
+anthropic>=0.7.0
+huggingface_hub>=0.16.0
+langchain-openai>=0.0.1
+langchain-anthropic>=0.0.1
+
+# Embeddings
+sentence-transformers>=2.2.0
+langchain-huggingface>=0.0.1
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn>=0.15.0
+streamlit>=1.28.0
+python-multipart>=0.0.5
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+loguru>=0.7.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Development
+pytest>=7.0.0
+black>=23.0.0
+isort>=5.12.0

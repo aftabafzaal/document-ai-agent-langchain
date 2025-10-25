@@ -1,0 +1,32 @@
+services:
+  document-ai-agent:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - DEBUG=False
+      - EMBEDDING_PROVIDER=huggingface
+      - LLM_PROVIDER=openai
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # frontend:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile.frontend
+  #   ports:
+  #     - "8501:8501"
+  #   depends_on:
+  #     - document-ai-agent
+  #   environment:
+  #     - BACKEND_URL=http://document-ai-agent:8000
+  #   restart: unless-stopped
